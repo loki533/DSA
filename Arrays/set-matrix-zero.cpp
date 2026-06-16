@@ -90,7 +90,57 @@ public:
         bool rowZero = false ;
         bool columnZero = false ;
 
+        for (int i=0 ; i<n_rows ;i++){ /*check if there is 0 in 1st column*/
+            if (matrix[i][0] == 0){
+                columnZero =true;
+                break;
+            }
+        }
+
+        for (int j=0;j<n_columns;j++){ /*checks if there is a 0 in 1st row*/
+            if (matrix[0][j] == 0){
+                rowZero = true;
+                break;
+            }
+        }
+
+        for(int i =1; i<n_rows ; i++){   /*if any zero in the subsequent part , mark it in the first row/column */
+            for(int j= 1; i<n_columns ; j++){
+                if (matrix[i][j]==0){
+                    matrix[0][j]=0;
+                    matrix[i][0]=0;
+                }
+            }
+        }
+
+        //setting 0 based on the marked first rows/columns
+
+        for(int i =1; i<n_rows ; i++){  
+            for(int j= 1; i<n_columns ; j++){
+                if (matrix[i][0] || matrix[0][j]){
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+
+        //Handle first row
+        if(rowZero){
+            for (int i=0 ; i<n_columns;i++){
+            matrix[0][i] =0;
+            }   
+        }
+
+        if (columnZero){
+            for (int i = 0 ; i< n_rows ; i++){
+                matrix[i][0] = 0;
+            }
+        }
         
+        
+
+
+
+
     }
 }
 
