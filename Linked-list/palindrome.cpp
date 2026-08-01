@@ -1,6 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+/*Approach
+    find the middle of the LL using slow and fast
+    reverse the second half of LL -> check if each of them are same as the 1st half*/
+
 struct ListNode {
         int val;
         ListNode *next;
@@ -12,7 +16,7 @@ struct ListNode {
 
 class Solution {
 public:
-    ListNode* reverse(ListNode* head){
+    ListNode* reverse(ListNode* head){ //reversing usin recursion
         if (head == NULL || head->next == NULL){
             return head;
         }
@@ -31,7 +35,7 @@ public:
             return true;
 
 
-        ListNode* dummy = new ListNode(0);
+        ListNode* dummy = new ListNode(0); //handle edge cases
         dummy->next = head;
 
         ListNode* fast = head;
@@ -56,7 +60,7 @@ public:
         
         }
 
-        reverse(newHead);
+        reverse(newHead); // to restore the LL as it was
         return true;
     }
 };

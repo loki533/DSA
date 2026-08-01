@@ -23,11 +23,11 @@ public:
         int lastend=-1;
 
         for(auto m:meetings){
-            int e=get<0>(m);
+            int e=get<0>(m); //end time 
             int s = get<1>(m);
             int id = get<2>(m);
 
-            if(s > lastend){
+            if(s > lastend){ //compare the start time
                 result.push_back(id);
                 lastend=e;
             }
