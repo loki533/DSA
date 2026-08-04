@@ -19,14 +19,14 @@ class Solution{
                     }
                 }
 
-                if(mid == m){
+                if(ans == m){
                     return mid;
                 }
-                else if(mid < m){
-                    high = mid-1;
+                else if(ans < m){
+                    low = mid+1;
                 }
                 else{
-                    low=mid+1;
+                    high=mid-1;
                 }
             }
             return -1;
