@@ -9,11 +9,11 @@ using namespace std;
     follow the same approach as Combination-sum1 , by moving index to next in picking
     and returning the ans list as a hash set*/
 
-/*draw recursion tree first to get better idea*/
+/*draw recursion tree first to get better ideaa*/
 
 class Solution {
 public:
-    void findcombination2(int index,vector<int>& candidates, int target,vector<vector<int>>& ans,vector<int> ds){
+    void findcombination2(int index,vector<int>& candidates, int target,vector<vector<int>>& ans,vector<int>& ds){
         if(target == 0){
             ans.push_back(ds);
             return;
