@@ -36,7 +36,7 @@ class ArrayStack{
 
         int top(){
             if (top == -1){
-                cout<<"Stack Underflow"<<end;
+                cout<<"Stack Underflow"<<endl;
                 return;
             }
             return stackarray[top];
