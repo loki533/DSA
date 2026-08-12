@@ -92,7 +92,7 @@ public:
     }
     
     int peek() {
-        if(s1.empty()){
+        if(s1.empty() && s2.empty()){
             cout<<"Empty stack"<<endl;
             return -1;
         }
